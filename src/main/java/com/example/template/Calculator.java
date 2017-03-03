@@ -14,7 +14,7 @@ public class Calculator {
         BufferedReader br = null;
         try {
             br = new BufferedReader(new FileReader(filepath));
-            int ret = callback.doSomethingWithReader(br);
+            int ret = callback.doSomethingWithReader(br); //콜백 오브젝트 호출
             return ret;
         } catch (IOException e) {
             System.out.println(e.getMessage());
