@@ -2,6 +2,7 @@ package com.example;
 
 import com.example.template.Calculator;
 import com.example.template2.Calculator2;
+import com.example.template3.Calculator3;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -19,12 +20,14 @@ import static org.junit.Assert.assertThat;
 public class TemplateCallbackApplicationTests {
 	Calculator calculator;
 	Calculator2 calculator2;
+	Calculator3 calculator3;
 	String numFilepath;
 
 	@Before
 	public void init() {
 		this.calculator = new Calculator();
 		this.calculator2 = new Calculator2();
+		this.calculator3 = new Calculator3();
 		this.numFilepath = "C:/Users/Kim YJ/Documents/template-callback/numbers.txt";
 	}
 
@@ -40,4 +43,8 @@ public class TemplateCallbackApplicationTests {
 		assertThat(calculator2.calcMultiply(this.numFilepath), is(24));
 	}
 
+	@Test
+	public void cancateString() throws IOException {
+		assertThat(calculator3.concatenate(this.numFilepath), is("1234"));
+	}
 }
